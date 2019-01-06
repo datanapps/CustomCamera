@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package datanapps.customcamera;
+package datanapps.cameralib.customcamera;
 
 import android.Manifest;
 import android.app.Activity;
@@ -57,8 +57,6 @@ import android.view.ViewGroup;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 
-
-
 import org.apache.commons.net.time.TimeTCPClient;
 
 import java.io.File;
@@ -73,7 +71,7 @@ import java.util.concurrent.TimeUnit;
 import nl.bravobit.ffmpeg.ExecuteBinaryResponseHandler;
 import nl.bravobit.ffmpeg.FFmpeg;
 
-public class Camera2VideoFragment extends android.support.v4.app.Fragment
+public class Camera2VideoFragment extends Fragment
         implements View.OnClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
     private static final int SENSOR_ORIENTATION_DEFAULT_DEGREES = 90;
@@ -139,12 +137,12 @@ public class Camera2VideoFragment extends android.support.v4.app.Fragment
 
 
     /**
-     * A reference to the opened {@link android.hardware.camera2.CameraDevice}.
+     * A reference to the opened {@link CameraDevice}.
      */
     private CameraDevice mCameraDevice;
 
     /**
-     * A reference to the current {@link android.hardware.camera2.CameraCaptureSession} for
+     * A reference to the current {@link CameraCaptureSession} for
      * preview.
      */
     private CameraCaptureSession mPreviewSession;
@@ -180,12 +178,12 @@ public class Camera2VideoFragment extends android.support.v4.app.Fragment
     };
 
     /**
-     * The {@link android.util.Size} of camera preview.
+     * The {@link Size} of camera preview.
      */
     private Size mPreviewSize;
 
     /**
-     * The {@link android.util.Size} of video recording.
+     * The {@link Size} of video recording.
      */
     private Size mVideoSize;
 
@@ -317,7 +315,7 @@ public class Camera2VideoFragment extends android.support.v4.app.Fragment
         mChVideoTimer = view.findViewById(R.id.video_timer);
 
         mTVServerTime = view.findViewById(R.id.current_time);
-        mImageButtonVideo = view.findViewById(R.id.video);
+        mImageButtonVideo = view.findViewById(R.id.video_icon);
         mImageButtonVideo.setOnClickListener(this);
         viewProgressBar = view.findViewById(R.id.rl_progress);
         viewProgressBar.setVisibility(View.GONE);
@@ -381,25 +379,17 @@ public class Camera2VideoFragment extends android.support.v4.app.Fragment
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.video: {
+
+
+       if(view.getId() == R.id.video_icon) {
                 if (mIsRecordingVideo) {
                     stopRecordingVideo();
                 } else {
                     startRecordingVideo();
                 }
-                break;
+
             }
-           /* case R.id.info: {
-                Activity activity = getActivity();
-                if (null != activity) {
-                    new AlertDialog.Builder(activity)
-                            .setMessage(R.string.intro_message)
-                            .setPositiveButton(android.R.string.ok, null)
-                            .show();
-                }
-                break;*/
-        }
+
 
     }
 
@@ -620,7 +610,7 @@ public class Camera2VideoFragment extends android.support.v4.app.Fragment
     }
 
     /**
-     * Configures the necessary {@link android.graphics.Matrix} transformation to `mTextureView`.
+     * Configures the necessary {@link Matrix} transformation to `mTextureView`.
      * This method should not to be called until the camera preview size is determined in
      * openCamera, or until the size of `mTextureView` is fixed.
      *

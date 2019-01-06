@@ -1,4 +1,4 @@
-package customcamera.datanapps.customcamera;
+package customcamera.datanapps.cameralib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("customcamera.datanapps.cameralib.customcamera", appContext.getPackageName());
+        assertEquals("customcamera.datanapps.cameralib.test", appContext.getPackageName());
     }
 }

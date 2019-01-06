@@ -1,15 +1,14 @@
-package datanapps.customcamera;
+package datanapps.cameralib.customcamera;
 
 import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+
 import android.support.design.widget.Snackbar;
 import android.util.Log;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 public class Utils {

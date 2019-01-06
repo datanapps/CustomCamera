@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package datanapps.customcamera;
+package datanapps.cameralib.customcamera;
 
 import android.content.Context;
-import android.graphics.SurfaceTexture;
 import android.util.AttributeSet;
 import android.view.TextureView;
 

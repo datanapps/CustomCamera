@@ -1,10 +1,9 @@
 
 
-package datanapps.customcamera;
+package datanapps.cameralib.customcamera;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
 
 
 public class CameraActivity extends AppCompatActivity {
