@@ -46,3 +46,7 @@ implementation project(':cameralib')
 5. All permission handle by module. No need to handle permisssion. 
 
 
+
+
+License
+Copyright 2019 datanapps.
