@@ -7,6 +7,10 @@ memory as possible.
 4. Marshmallow code 
 
 
+![alt text](https://github.com/datanapps/CustomCamera/blob/master/screens/camera.png)
+![alt text](https://github.com/datanapps/CustomCamera/blob/master/screens/camera2.png)
+
+
 Usage
 
 1. Added code in your application.
